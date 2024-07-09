@@ -1,0 +1,15 @@
+.color {
+    display: flex;
+}
+
+.color>div {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 1px solid black;
+}
+
+.new-group {
+    display: flex;
+    gap: 0.5em;
+}

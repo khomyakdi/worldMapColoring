@@ -1,3 +1,13 @@
+import './Groups.css';
+import NewGroup from "./NewGroup";
+
 export default () => {
-   return <div>Groups</div>
+   const onGroupCreate = group => {
+      console.log(group);
+   }
+   return (
+      <div>
+         <NewGroup onGroupCreate={onGroupCreate} />
+      </div>
+   );
 };
