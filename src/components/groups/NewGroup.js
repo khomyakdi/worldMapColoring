@@ -5,6 +5,7 @@ const NewGroup = ({ onGroupCreate }) => {
     const [color, setColor] = useState('');
 
     const onSubmit = (e) => {
+        //TODO Add validation
         onGroupCreate({ name, color });
         setName('');
         setColor('');

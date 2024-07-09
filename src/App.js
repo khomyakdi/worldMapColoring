@@ -1,22 +1,37 @@
 import './App.css';
+import { useCallback, useMemo, useState } from 'react';
 import Groups from './components/groups';
 import Map from './components/map';
+import GroupsContext from './GroupsContext';
 
 /*
 
-- Create dictionary of countries and their ID
+- Group deletion
 - Handle click on country
-- Groups creation
-- Provider with existed group
 - Fill countries with groups color
 
 */
 
 function App() {
+  const [groups, setGroups] = useState({});
+
+  const createGroup = useCallback(group => {
+    const newGroups = { ...groups };
+    newGroups[group.name] = { ...group, codes: [] };
+    setGroups(newGroups);
+  }, [groups]);
+
+  const value = useMemo(() => ({
+    groups,
+    createGroup,
+  }), [groups, createGroup]);
+
   return (
     <div className="App">
-		  <Groups />
-      <Map />
+      <GroupsContext.Provider value={value}>
+        <Groups />
+        <Map />
+      </GroupsContext.Provider>
     </div>
   );
 }
