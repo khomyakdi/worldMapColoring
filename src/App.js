@@ -6,7 +6,6 @@ import GroupsContext from './GroupsContext';
 
 /*
 
-- Group deletion
 - Handle click on country
 - Fill countries with groups color
 
@@ -21,10 +20,17 @@ function App() {
     setGroups(newGroups);
   }, [groups]);
 
+  const deleteGroup = useCallback(name => {
+    const newGroups = { ...groups };
+    delete newGroups[name];
+    setGroups(newGroups);
+  }, [groups]);
+
   const value = useMemo(() => ({
     groups,
     createGroup,
-  }), [groups, createGroup]);
+    deleteGroup,
+  }), [groups, createGroup, deleteGroup]);
 
   return (
     <div className="App">

@@ -12,9 +12,11 @@ import { memo } from 'react';
 
 const Map = ({ groups, onCountryClick }) => {
     const onClick = (e) => {
-			console.log(e.target.id, );
-    };
+      const pathId = e.target.id;
 
+			console.log(pathId);
+      onCountryClick(pathId);
+    };
     return (
         <div>
            <WorldMap onClick={onClick} />

@@ -13,3 +13,7 @@
     display: flex;
     gap: 0.5em;
 }
+
+.group-item {
+  display: flex;
+}
