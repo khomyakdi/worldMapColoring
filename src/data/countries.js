@@ -19,7 +19,7 @@ export const countryCodes = [
     "bm", "tv", "nr", "gi", "pn", "mc", "va", "im", "gu", "sg", "tk",
 ];
 
-export default [
+export const countries = [
     {
         "id": "sd",
         "title": "Sudan",

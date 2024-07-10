@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import GroupsContext from '../../GroupsContext';
 import NewGroup from "./NewGroup";
 
-export default () => {
+const Groups = () => {
   const {
     groups,
     createGroup,
@@ -50,3 +50,6 @@ export default () => {
       </div>
   );
 };
+
+export default Groups;
+
