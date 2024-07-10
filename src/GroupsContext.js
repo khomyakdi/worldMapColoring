@@ -11,7 +11,7 @@ import { createContext } from "react";
 */
 
 const GroupsContext = createContext({
-    groups: {},
+  groups: {},
 });
 
 export default GroupsContext;
